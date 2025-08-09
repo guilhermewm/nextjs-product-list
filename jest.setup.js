@@ -1,9 +1,8 @@
-import "@testing-library/jest-dom";
-import "whatwg-fetch";
+require("@testing-library/jest-dom");
+require("whatwg-fetch");
 
 // Polyfills/mocks for Ant Design and rc-* libs under jsdom
 if (!("matchMedia" in window)) {
-  // @ts-expect-error add minimal stub for tests
   window.matchMedia = () => ({
     matches: false,
     media: "",
@@ -16,17 +15,14 @@ if (!("matchMedia" in window)) {
   });
 }
 
-// jsdom throws for getComputedStyle with pseudo elements; provide a tolerant stub
 const originalGetComputedStyle = window.getComputedStyle;
-// @ts-expect-error override for tests
-window.getComputedStyle = (elt: Element) => {
+window.getComputedStyle = elt => {
   try {
     return originalGetComputedStyle(elt);
   } catch {
-    // Fallback minimal style object
     return {
       getPropertyValue: () => "",
       overflowY: "scroll",
-    } as any;
+    };
   }
 };

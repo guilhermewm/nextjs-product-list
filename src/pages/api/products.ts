@@ -1,6 +1,4 @@
-import {
-  datastore,
-} from "@/datastore/datastore-server";
+import { datastore } from "@/datastore/datastore-server";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { Operator, Product, Property } from "../../utils/utils.types";
 import { isOperatorValid } from "./operators";

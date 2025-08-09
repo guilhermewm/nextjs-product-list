@@ -16,5 +16,13 @@
     "prettier/prettier": "error",
     "no-console": "warn",
     "no-debugger": "error"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/__tests__/**/*.*", "**/*.test.ts", "**/*.test.tsx"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    }
+  ]
 }
