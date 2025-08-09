@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+}
+
+.layout {
+  min-height: 100vh;
+}
+
+.header {
+  background: #001529;
+  color: white;
+  display: flex;
+  align-items: center;
+
+  .icon {
+    font-size: 24px;
+    margin-right: 12px;
+  }
+
+  .text {
+    color: white;
+    margin: 0;
+  }
+}
+
+.content {
+  padding: 24px;
+  background: #f0f2f5;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.form {
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  padding: 12px;
+}
